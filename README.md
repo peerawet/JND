@@ -1,2 +1,2 @@
 
-![System Architecture Diagram](fame.jng)
+![System Architecture Diagram](fame.jpg)
