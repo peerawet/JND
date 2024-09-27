@@ -19,7 +19,7 @@ export function SignUpLink({ navigate }) {
             }
           `}
           onClick={() => {
-            navigate("/jnd/register");
+            navigate("/jnd/web/register");
           }}
         >
           Register
@@ -33,7 +33,7 @@ export function SignUpLink({ navigate }) {
             }
           `}
           onClick={() => {
-            navigate("/jnd");
+            navigate("/jnd/web/home");
           }}
         >
           Guest

@@ -12,11 +12,6 @@ class User extends Authenticatable implements JWTSubject // Implement the JWTSub
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
     protected $fillable = [
         'username',
         'email',
@@ -29,12 +24,12 @@ class User extends Authenticatable implements JWTSubject // Implement the JWTSub
     // Method to return the unique identifier for the user
     public function getJWTIdentifier()
     {
-        return $this->getKey(); 
+        return $this->getKey();
     }
 
     // Method to return custom claims for the JWT
     public function getJWTCustomClaims()
     {
-        return []; 
+        return [];
     }
 }

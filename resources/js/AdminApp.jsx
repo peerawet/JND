@@ -5,17 +5,15 @@ import LoginPage from "./pages/LoginPage/LoginPage.jsx";
 import UserPage from "./pages/user/UserPage.jsx";
 import AdminPage from "./pages/admin/AdminPage.jsx";
 
-
 function AdminApp() {
-  return (
-    <Routes>
-    <Route path="/jnd/" element={<LandingPage />} />
-    <Route path="/jnd/register" element={<RegisterPage />} />
-    <Route path="/jnd/login" element={<LoginPage />} />
-    <Route path="/jnd/admin" element={<AdminPage />} />
-   
-</Routes>
-  );
+    return (
+        <Routes>
+            <Route path="/home" element={<LandingPage />} />
+            <Route path="/register" element={<RegisterPage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/admin" element={<AdminPage />} />
+        </Routes>
+    );
 }
 
 export default AdminApp;

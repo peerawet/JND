@@ -20,7 +20,7 @@ const AppRoutes = () => {
 
     useEffect(() => {
         checkToken();
-    }, [checkToken]);
+    }, []);
 
     useEffect(() => {
         const csrfToken = document
@@ -31,27 +31,26 @@ const AppRoutes = () => {
         }
     }, []);
 
-   
     if (state.isAuthenticated === null) {
-        return <div>Loading...</div>; 
+        return <div>Loading...</div>;
     }
 
     return (
         <Routes>
             {state.user && state.user.role === "admin" ? (
-                <Route path="/*" element={<AdminApp />} />
+                <Route path="/jnd/web/*" element={<AdminApp />} />
             ) : state.user && state.user.role === "user" ? (
-                <Route path="/*" element={<UserApp />} />
+                <Route path="/jnd/web/*" element={<UserApp />} />
             ) : (
-                <Route path="/*" element={<GuestApp />} />
+                <Route path="/jnd/web/*" element={<GuestApp />} />
             )}
-            <Route path="*" element={<Navigate to="/" />} />
+            <Route path="*" element={<Navigate to="/jnd/web/" />} />
         </Routes>
     );
 };
 
 const App = () => {
-    jwtInterceptor(); 
+    jwtInterceptor();
 
     return (
         <Router>

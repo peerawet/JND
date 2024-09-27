@@ -55,7 +55,7 @@ function Navbar() {
             >
                 <div
                     onClick={() => {
-                        navigate("/jnd");
+                        navigate("/jnd/web/home");
                         window.location.reload();
                     }}
                     css={css`
@@ -123,7 +123,7 @@ function Navbar() {
                                 }
                             `}
                             onClick={() => {
-                                navigate("/jnd/login");
+                                navigate("/jnd/web/login");
                             }}
                         >
                             <div>Login</div>
@@ -137,7 +137,7 @@ function Navbar() {
                             aria-haspopup="true"
                             aria-expanded={open ? "true" : undefined}
                             onClick={() => {
-                                navigate("/jnd");
+                                navigate("/jnd/web/home");
                             }}
                             css={css`
                                 background-color: #ff7037;

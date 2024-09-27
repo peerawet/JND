@@ -8,10 +8,9 @@ import AdminPage from "./pages/admin/AdminPage.jsx";
 function GuestApp() {
     return (
         <Routes>
-            <Route path="/jnd/" element={<LandingPage />} />
-            <Route path="/jnd/register" element={<RegisterPage />} />
-            <Route path="/jnd/login" element={<LoginPage />} />
-     
+            <Route path="/home" element={<LandingPage />} />
+            <Route path="/register" element={<RegisterPage />} />
+            <Route path="/login" element={<LoginPage />} />
         </Routes>
     );
 }

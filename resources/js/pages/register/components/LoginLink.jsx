@@ -19,7 +19,7 @@ function LoginLink({ navigate }) {
             }
           `}
           onClick={() => {
-            navigate("/jnd/login");
+            navigate("/jnd/web/login");
           }}
         >
           Login

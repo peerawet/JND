@@ -85,9 +85,9 @@ function AuthProvider(props) {
             }));
             console.log(state);
             if (userDataFromToken.role === "admin") {
-                navigate("/jnd/admin");
+                navigate("/jnd/web/admin");
             } else {
-                navigate(`/jnd/user`);
+                navigate(`/jnd/web/user`);
             }
 
             localStorage.setItem("token", token);
@@ -112,7 +112,7 @@ function AuthProvider(props) {
 
         setState({ ...state, user: null });
         console.log(localStorage);
-        navigate("/jnd/login");
+        navigate("/jnd/web/login");
     };
 
     //decode token
@@ -130,7 +130,6 @@ function AuthProvider(props) {
             }
 
             const userDataFromToken = jwtDecode(storedToken);
-            console.log(userDataFromToken);
 
             setState((prevState) => ({
                 ...prevState,
@@ -147,10 +146,6 @@ function AuthProvider(props) {
             }));
         }
     };
-
-    useEffect(() => {
-        checkToken();
-    }, []);
 
     return (
         <AuthContext.Provider

@@ -27,7 +27,7 @@ function SuccessModal({ formData }) {
             isLoading: false,
           },
         }));
-        navigate("/login"); // Navigate to login page on close
+        navigate("jnd/login"); // Navigate to login page on close
       }}
       closeAfterTransition
       slots={{ backdrop: Backdrop }}
@@ -132,7 +132,7 @@ function SuccessModal({ formData }) {
                     isLoading: false,
                   },
                 }));
-                navigate("/login");
+                navigate("/jnd/web/login");
               }}
             >
               Close

@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ShortenerController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UrlController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,9 +17,28 @@ use App\Http\Controllers\AuthController;
 |
 */
 
-Route::get('/{any}', function () {
+
+
+
+Route::get('/web/{any}', function () {
     return view('app');
 })->where('any', '.*');
 
+Route::get('/{shortUrl}', [UrlController::class, 'redirectToFullUrl']);
+
+
+
 Route::post('/api/register', [AuthController::class, 'register']);
 Route::post('/api/login', [AuthController::class, 'login']);
+
+Route::post('/api/shortener', [ShortenerController::class, 'shortener']);
+
+
+
+
+Route::get('/api/get-shorten-by-id', [ShortenerController::class, 'getUrlsByUserId']);
+
+
+Route::get('/api/get-all-users', [AdminController::class, 'getAllUsers']);
+Route::get('/api/get-urls-by-user-id/{id}', [AdminController::class, 'getUrlsByUserId']);
+
